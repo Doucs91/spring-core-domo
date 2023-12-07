@@ -22,7 +22,7 @@ public class DemoController {
 	 * CONSTRUCTER INJECTION
 	 */
 	@Autowired // OPtionnel si on a qu'une seulle dependance
-	public DemoController(@Qualifier("cricketCoach") Coach coach) {
+	public DemoController(Coach coach) {
 		this.coach = coach;
 	}
 
