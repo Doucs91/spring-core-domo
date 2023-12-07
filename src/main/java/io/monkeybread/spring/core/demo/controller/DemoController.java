@@ -10,9 +10,18 @@ import io.monkeybread.model.Coach;
 public class DemoController {
 
 	private Coach coach;
-
-	@Autowired // OPtionnel si on a qu'une seulle dependance
-	public DemoController(Coach coach) {
+ /*
+  * CONSTRUCTER INJECTION
+  */
+//	@Autowired // OPtionnel si on a qu'une seulle dependance
+//	public DemoController(Coach coach) {
+//		this.coach = coach;
+//	}
+	/*
+	  * SETTER INJECTION
+	  */
+	@Autowired
+	public void setCoach(Coach coach) {
 		this.coach = coach;
 	}
 
