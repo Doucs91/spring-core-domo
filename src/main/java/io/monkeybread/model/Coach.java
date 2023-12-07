@@ -1,4 +1,4 @@
-package io.monkeybread.spring.core.demo.models;
+package io.monkeybread.model;
 
 public interface Coach {
 	String getDailyWorkout();
