@@ -17,14 +17,16 @@ public class DemoController {
 	 */
 
 	private Coach coach;
+	private Coach anotherCoach;
 
 	/*
 	 * CONSTRUCTER INJECTION
 	 */
 	@Autowired // OPtionnel si on a qu'une seulle dependance
-	public DemoController(@Qualifier("cricketCoach") Coach coach) {
+	public DemoController(@Qualifier("cricketCoach") Coach coach, @Qualifier("cricketCoach") Coach anothercoCoach) {
 		System.out.println("In constructer: " + getClass().getSimpleName());
 		this.coach = coach;
+		this.anotherCoach = anothercoCoach;
 	}
 
 	/*
@@ -39,4 +41,10 @@ public class DemoController {
 	public String getDailyWorkout() {
 		return coach.getDailyWorkout();
 	}
+
+	@GetMapping("/chech")
+	public String check() {
+		return "Comparing coach == anotherCoach: " + (coach == anotherCoach);
+	}
+
 }
