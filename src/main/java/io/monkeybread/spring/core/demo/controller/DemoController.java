@@ -22,7 +22,8 @@ public class DemoController {
 	 * CONSTRUCTER INJECTION
 	 */
 	@Autowired // OPtionnel si on a qu'une seulle dependance
-	public DemoController(Coach coach) {
+	public DemoController(@Qualifier("cricketCoach") Coach coach) {
+		System.out.println("In constructer: " + getClass().getSimpleName());
 		this.coach = coach;
 	}
 
