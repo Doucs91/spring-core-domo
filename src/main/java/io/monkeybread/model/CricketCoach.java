@@ -7,7 +7,7 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
 @Component
-//@Scope("prototype")
+@Scope("prototype")
 public class CricketCoach implements Coach {
 	public CricketCoach() {
 		System.out.println("In constructer: " + getClass().getSimpleName());
